@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>billNotes</title>
+  <link rel="stylesheet" href="ruff.css">
+</head>
+
+<body >
+
+  <button id="darkmode" onclick="darkMode(event)"style="float:right; border-radius:50%; height:30px; width:30px;"> &#127769;</button>
+  <div class="main centered">
+    <p class="p" style="font-size: 18px; font-family: monospace;">Manage the money you share</p>
+    <p class="p" style="font-size: 18px; font-family: monospace;">Keep the track of how much money you have,lent or own from
+      anyone</p>
+    <br>
+    <br>
+    <p class="p" style="font-size: 16px; font-family: monospace;">Add a Friend</p>
+    <br>
+    <form action="" id="addForm">
+      <input type="name" id="Name" placeholder="  Name">
+      <button id="newFrnd" onclick="addNewFrnd(event)"
+        style="color: white; background-color: black; height: 25px; width: 75px;">Add</button>
+    </form>
+    <br>
+    <hr>
+    <br>
+    <p class="p" style="font-size: 16px; font-family: monospace;">Create</p>
+
+    <form action="" id="addName1">
+
+      <select style="margin-top: 10px;" name="leftName" id="leftName" onchange="getleftName(event);">
+        <option disabled selected value> -- select a name -- </option>
+        <option value="Friend1">Friend1</option>
+        <option value="Friend2">Friend2</option>
+        <option value="Friend3">Friend3</option>
+      </select>
+      <select name="function" id="function" onchange="getFunctionName(event);">
+        <option disabled selected value> owe/lent </option>
+        <option value="owe">owe</option>
+        <option value="lent">lent</option>
+      </select>
+      <select style="margin-top: 10px;" name="rightName" id="rightName" onchange="getRightName(event);">
+        <option disabled selected value> -- select a name -- </option>
+        <option value="Friend1">Friend1</option>
+        <option value="Friend2">Friend2</option>
+        <option value="Friend3">Friend3</option>
+      </select>
+      <br>
+      <br>
+
+      <input type="number" id="Amount" placeholder="  Amount">
+      <button id="adddataitem" type="submit"
+        style="color: white; background-color: black; height: 25px; width: 75px;">Add</button>
+    </form>
+    <br>
+    <hr>
+
+    <div class="data">
+      <div class="noteBox" id="notebox">
+        <p class="p" style="font-size: 18px; font-family: monospace;">Data</p>
+        <br>
+      </div>
+    </div>
+  </div>
+  <script src="ruff.js"></script>
+</body>
+
+</html>
