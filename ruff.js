@@ -37,7 +37,7 @@ function getRightName(e) {
 function addDataItem(e) {
     e.preventDefault();
     var amount = document.getElementById("Amount").value;
-    var x = leftNameData[index] + " " + functionNameData[index] + " " + amount + " ruppess to " + rightNameData[index] + "\n";
+    var x = leftNameData[index] + " " + functionNameData[index] + " " + amount + " rupess to " + rightNameData[index] + "\n";
     var div = document.createElement('li');
     div.className = 'newdata';
     var divText = x;
@@ -61,21 +61,40 @@ function removeData(e) {
     }
 }
 function addNewFrnd(e) {
+    var count =true;
     e.preventDefault();
     var newFrndDiv = document.createElement('option');
     var newFrndName = document.getElementById('Name').value;
-    newFrndDiv.value = 'Friend4';
-    newFrndDiv.appendChild(document.createTextNode(newFrndName));
-    newFrnd.appendChild(newFrndDiv);
+    for (var i = 0; i < document.getElementById("leftName").length; ++i){
+        if (document.getElementById("leftName").options[i].value == newFrndName){
+          alert(`${newFrndName} already exists`);
+          count =false;
+        }
+    }
+    if(count){
+        newFrndDiv.value = 'Friend4';
+        newFrndDiv.appendChild(document.createTextNode(newFrndName));
+        newFrnd.appendChild(newFrndDiv);
+    }
 
 }
 function add(e) {
     e.preventDefault();
+    var count =true;
+
     var newFrndDiv = document.createElement('option');
     var newFrndName = document.getElementById('Name').value;
-    newFrndDiv.value = 'Friend4';
-    newFrndDiv.appendChild(document.createTextNode(newFrndName));
-    newFrnd1.appendChild(newFrndDiv);
+    for (var i = 0; i < document.getElementById("rightName").length; ++i){
+        if (document.getElementById("rightName").options[i].value == newFrndName){
+         
+          count =false;
+        }
+    }
+    if(count){
+        newFrndDiv.value = 'Friend4';
+        newFrndDiv.appendChild(document.createTextNode(newFrndName));
+        newFrnd1.appendChild(newFrndDiv);
+    }
 
 }
 document.getElementById('newFrnd').addEventListener("click", add);
@@ -102,6 +121,8 @@ function darkMode(e) {
             elem[i].style.color = "white";
             elem[i].style.backgroundColor = "black";
         }
+        var darkModeBtn = document.getElementById('darkmode');
+        darkModeBtn.innerHTML='🌞';
     }
     else {
         document.body.style.backgroundColor = 'black';
@@ -124,5 +145,7 @@ function darkMode(e) {
             elem[i].style.color = "black";
             elem[i].style.backgroundColor = "white";
         }
+        var darkModeBtn = document.getElementById('darkmode');
+        darkModeBtn.innerHTML='🌙';
     }
 }
