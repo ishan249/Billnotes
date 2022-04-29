@@ -117,7 +117,7 @@ function darkMode(e) {
         var ele = document.getElementsByClassName('newdata');
         for (var i = 0; i < ele.length; i++) {
             ele[i].style.color = "white";
-            ele[i].style.backgroundColor = "blakc";
+            ele[i].style.backgroundColor = "black";
         }
         var elem = document.getElementsByClassName('delete');
         for (var i = 0; i < elem.length; i++) {
